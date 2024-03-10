@@ -57,3 +57,18 @@ main {
     color:#fff;
     background-color: rgba(0, 0, 0, 0.799);
 }
+
+@media screen and (max-width: 800px) {
+    main {
+        flex-direction: column;
+    }
+
+    .filters {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        width: 100%;
+    }
+}

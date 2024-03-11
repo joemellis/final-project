@@ -1,4 +1,6 @@
 body {
+    width: 100%;
+    height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: url("/static/assets/background.png");
@@ -6,6 +8,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgb(16, 16, 16);
+    
 }
 
 nav {
@@ -24,7 +27,10 @@ nav input[type="text"] {
     margin-right: 5px;
     padding: 5px;
 }
-
+.create-button{
+    background-color: greenyellow;
+    color: #fff;
+}
 .search {
     border-radius: 20px;
 }
@@ -38,6 +44,7 @@ main {
 .filters {
     width: 20%;
     padding-right: 20px;
+    padding-left: 10px;
     margin-right: 20px;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.799);
@@ -86,6 +93,7 @@ input[type="text"] {
     background-color: rgba(0, 0, 0, 0.799);
     display: flex;
     border-radius: 10px;
+    max-height: 200px;
 }
 
 .card-image {
@@ -99,6 +107,7 @@ input[type="text"] {
     width: 100%;
     height: auto;
     justify-self: center;
+    margin-right: 10px;
 }
 
 .image-overlay {
@@ -115,7 +124,7 @@ input[type="text"] {
 
 .image-overlay img {
     width: 40px; /* Adjust as needed */
-    margin-right: 5px;
+    margin-right: -5px;
 }
 
 .image-overlay span {
@@ -126,6 +135,7 @@ input[type="text"] {
 .card-info {
     flex: 2;
     padding: 2px;
+    margin-left: 10px;
 }
 
 .card-info h3 {
@@ -134,7 +144,7 @@ input[type="text"] {
 
 .card-price,
 .card-favorite {
-    flex: 1;
+    flex: 2;
     padding: 10px;
 }
 
@@ -164,12 +174,21 @@ input[type="text"] {
     .content {
         width: 100%;
     }
+
+    .filters {
+       
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
 @media screen and (max-width: 800px) {
 
     .card {
         flex-direction: column;
-        
+        max-height: fit-content;
+        margin-left: 20px;
+        margin-right: 20px;
     }
+
 
 }

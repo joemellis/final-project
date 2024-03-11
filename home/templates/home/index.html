@@ -2,6 +2,41 @@
 {% load static %}
 
 {% block content %}
+{% if home_list|length > 0 %}
+<div class="content">
+    <div class="category-heading">{{ category_name }} - Found Items: {{ home_list|length }}</div>
+
+    {% for home in home_list %}
+    <div class="card">
+        <div class="card-image">
+            <img src="{{ home.image.url }}" alt="Item Image">
+            <div class="image-overlay">
+                <img src="/static/assets/camera.png" alt="Camera Icon">
+                <span>{{ home.additional_photos }}</span>
+            </div>
+        </div>
+        <div class="card-info">
+            <h3>{{ home.title }}</h3>
+            <p>Created on: {{ home.created_on|date:"F j, Y" }} Location: {{ home.location }} Category: {{ home.category }}</p>
+            <p>{{ home.description }}</p>
+        </div>
+        <div class="details">
+            <div class="card-price">
+                <p>Price</p>
+                <p>${{ home.price }}</p>
+            </div>
+            <div>
+                <button class="contact-button">Contact</button>
+            </div>
+            <div class="card-favorite">
+                <button>&#10084;</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+{else}
+
 <div class="content">
     <div class="category-heading">Category Name - Found Items: 10</div>
     <div class="card">
@@ -92,5 +127,5 @@
     </div>
     <!-- Repeat the card structure for each item -->
 </div>
-
-{% endblock%}
+{% endif %}
+{% endblock %}

@@ -2,10 +2,12 @@
 
 {% extends 'base.html' %}
 {% block content %}
-<h2>Confirm Deletion</h2>
+<h2 class="category-heading">Confirm Deletion</h2>
+<div class="card">
 <p>Are you sure you want to delete "{{ advert.title }}"?</p>
 <form method="post">
     {% csrf_token %}
     <button type="submit">Yes, Delete</button>
 </form>
+</div>
 {% endblock %}

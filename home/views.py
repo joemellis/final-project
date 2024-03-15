@@ -8,9 +8,8 @@ from django.contrib.auth.decorators import login_required
 #def index(request):
 #    return render(request,'home/index.html')
 def index(request):
-    home_list = Home.objects.all()
+    home_list = Home.objects.all().order_by('-created_on')
     return render(request, 'home/index.html', {'home_list': home_list})
-
 # ------------------------------------------------CREATE A POST
 
 @login_required

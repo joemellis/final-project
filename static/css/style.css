@@ -42,6 +42,7 @@ main {
 }
 
 .filters {
+    display: none;
     width: 20%;
     padding-right: 20px;
     padding-left: 10px;
@@ -76,6 +77,7 @@ input[type="text"] {
 
 .content {
     flex: 1;
+    max-width: 100%;
 }
 
 .category-heading {
@@ -94,6 +96,7 @@ input[type="text"] {
     display: flex;
     border-radius: 10px;
     max-height: 200px;
+    max-width: 100%;
 }
 
 .card-image {
@@ -108,8 +111,11 @@ input[type="text"] {
     height: auto;
     justify-self: center;
     margin-right: 10px;
+    max-width: 300px;
 }
-
+.card p{
+    max-width: 200px;
+}
 .image-overlay {
     position: absolute;
     top: 0;
@@ -118,7 +124,6 @@ input[type="text"] {
     color: white;
     display: flex;
     align-items: center;
-    
     border-radius: 50px;
 }
 
@@ -136,6 +141,7 @@ input[type="text"] {
     flex: 2;
     padding: 2px;
     margin-left: 10px;
+    max-width: 20%;
 }
 
 .card-info h3 {

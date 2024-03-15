@@ -24,7 +24,7 @@
                 <!-- Show logout and favorite buttons if user is logged in -->
                 <button onclick="location.href='{% url 'account_logout' %}'">Logout</button>
                 <button>&#10084;</button>
-                <button class="create-button">Create+</button>
+                <button onclick="location.href='{% url 'create_advert' %}'">Create Advert</button>
             {% else %}
                 <!-- Show login and sign up buttons if user is not logged in -->
                 <button onclick="location.href='{% url 'account_login' %}'">Login</button>

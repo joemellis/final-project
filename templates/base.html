@@ -22,10 +22,11 @@
         <div>
             {% if user.is_authenticated %}
                 <!-- Show logout and favorite buttons if user is logged in -->
-                <button onclick="location.href='{% url 'account_logout' %}'">Logout</button>
+                <a href="{% url 'user_posts' %}">Your Posts</a>
                 <button>&#10084;</button>
                 <button onclick="location.href='{% url 'create_advert' %}'">Create Advert</button>
-            {% else %}
+                <button onclick="location.href='{% url 'account_logout' %}'">Logout</button>
+                {% else %}
                 <!-- Show login and sign up buttons if user is not logged in -->
                 <button onclick="location.href='{% url 'account_login' %}'">Login</button>
                 <button onclick="location.href='{% url 'account_signup' %}'">SignUp</button>

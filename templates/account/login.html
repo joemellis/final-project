@@ -1,36 +1,37 @@
-{% extends "account/base_entrance.html" %}
+{% extends "base.html" %}
+
 {% load i18n %}
 {% load allauth account %}
+
 {% block head_title %}
     {% trans "Sign In" %}
 {% endblock head_title %}
+
 {% block content %}
-    {% element h1 %}
-        {% trans "Sign In" %}
-    {% endelement %}
-    <p>
-        {% blocktrans %}If you have not created an account yet, then please
-    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
-    </p>
-    {% url 'account_login' as login_url %}
-    {% element form form=form method="post" action=login_url tags="entrance,login" %}
-        {% slot body %}
+    <div class="content">
+        <h2 class="category-heading">{% trans "Sign In" %}</h2>
+        <form class="card-create" method="post" action="{% url 'account_login' %}">
             {% csrf_token %}
-            {% element fields form=form unlabeled=True %}
-            {% endelement %}
+            <div class="form-group">
+                <label for="id_login">{% trans "Username or Email" %}</label>
+                <input id="id_login" type="text" name="login" placeholder="{% trans "Enter your username or email" %}" required autofocus>
+            </div>
+            <div class="form-group">
+                <label for="id_password">{% trans "Password" %}</label>
+                <input id="id_password" type="password" name="password" placeholder="{% trans "Enter your password" %}" required>
+            </div>
             {% if redirect_field_value %}
-                <input type="hidden"
-                       name="{{ redirect_field_name }}"
-                       value="{{ redirect_field_value }}" />
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
             {% endif %}
-        {% endslot %}
-        {% slot actions %}
-            {% element button type="submit" tags="prominent,login" %}
-                {% trans "Sign In" %}
-            {% endelement %}
-        {% endslot %}
-    {% endelement %}
-    {% if SOCIALACCOUNT_ENABLED %}
-        {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
-    {% endif %}
+            <button class="btn btn-primary" type="submit">{% trans "Sign In" %}</button>
+        </form>
+        <p class="card-create">
+            {% trans "If you have not created an account yet, then please" %}
+            <a href="{% url 'account_signup' %}">{% trans "sign up" %}</a>
+            {% trans "first." %}
+        </p>
+        {% if SOCIALACCOUNT_ENABLED %}
+            {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+        {% endif %}
+    </div>
 {% endblock content %}

@@ -17,6 +17,7 @@
         </div>
         <div class="card-info">
             <h3>{{ home.title }}</h3>
+            <p>Seller: {{ home.user.username }}</p>
             <p>Created on: {{ home.created_on|date:"F j, Y" }} Location: {{ home.location }} Category: {{ home.category }}</p>
        
             <p>{{ home.description }}</p>
@@ -46,16 +47,7 @@
     </div>
     {% endfor %}
 </div>
-<footer class="card">
-    <div class="social-links">
-        <a href="#"><i class="bx bxl-facebook"></i></a>
-        <a href="#"><i class="bx bxl-twitter"></i></a>
-        <a href="#"><i class="bx bxl-instagram"></i></a>
-    </div>
-    <div class="copyright">
-        <p>&copy; 2024 Rustys TradingPost. All rights reserved.</p>
-    </div>
-</footer>
+
 <script>
     // Get the modal
     let modal = document.getElementById("contactFormModal");

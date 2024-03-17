@@ -80,6 +80,19 @@ input[type="text"] {
     max-width: 100%;
 }
 
+
+.card-create{
+    align-items:center ;
+    display: flex;
+    justify-content: center;
+    max-height: 700px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.799);
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    color:#fff;
+}
 .category-heading {
     font-size: 24px;
     margin-bottom: 10px;

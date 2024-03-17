@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Advert</title>
-</head>
-<body>
-    <div class="content">
-        <h2 class="category-heading">Create New Advert</h2>
-        <form class="card" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Create Advert</button>
-        </form>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="content">
+    <h2 class="category-heading">Create New Advert</h2>
+    <form class=" card-create" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Advert</button>
+    </form>
 </div>
+{% endblock %}
 </body>
 </html>

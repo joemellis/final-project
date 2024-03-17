@@ -26,10 +26,8 @@
                 <!-- Show logout and favorite buttons if user is logged in -->
                 <a href="{% url 'user_posts' %}">Your Posts</a>
                 <a href="{% url 'inbox' %}">
-                    <i class="fa fa-envelope"></i>
-                    {% if unread_count %}
-                        <span class="badge">{{ unread_count }}</span>
-                    {% endif %}
+                    <i class="fa fa-envelope"></i></a>
+                    
                 <button onclick="location.href='{% url 'create_advert' %}'">Create Advert</button>
                 <button onclick="location.href='{% url 'account_logout' %}'">Logout</button>
                 <a href="{% url 'index' %}">Home</a>
@@ -37,6 +35,7 @@
                 <!-- Show login and sign up buttons if user is not logged in -->
                 <button onclick="location.href='{% url 'account_login' %}'">Login</button>
                 <button onclick="location.href='{% url 'account_signup' %}'">SignUp</button>
+                
             {% endif %}
         </div>
     </nav>
@@ -84,9 +83,19 @@
         <div class="content">
             {%block content%}
             {%endblock%}
-            </div>
+        </div>
         
     </main>
+    <footer class="card">
+        <div class="social-links">
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Rustys TradingPost. All rights reserved.</p>
+        </div>
+    </footer>
 </div>
 
 </body>     

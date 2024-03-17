@@ -2,11 +2,25 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2 class="category-heading">Your Inbox</h2>
-<ul>
+<ul class="message-list">
   {% for message in messages %}
-  <li>
-    <a href="{% url 'message_detail' message.id %}">{{ message.subject }}</a>
-    <!-- Add more message details as needed -->
+  <li class="message-card">
+    <div class="message-info">
+      <a class="card" href="{% url 'message_detail' message.id %}">{{ message.subject }}</a>
+      <!-- Display start of the message -->
+      <p>{{ message.content|truncatechars:50 }}</p> <!-- Adjust the number of characters as needed -->
+    </div>
+    <div class="message-actions">
+      <!-- Delete Icon -->
+      <form action="{% url 'delete_message' message.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="delete-icon"><i class="fas fa-trash"></i></button>
+      </form>
+      <!-- Reply Icon -->
+      <a class="reply-icon" href="{% url 'compose_message' recipient_id=message.sender.id %}">
+        <i class="fas fa-reply"></i>
+      </a>
+    </div>
   </li>
   {% endfor %}
 </ul>

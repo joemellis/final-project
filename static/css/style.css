@@ -172,7 +172,28 @@ input[type="text"] {
     width: 40px;
 }
 
-
+.message-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .message-info {
+    flex-grow: 1;
+  }
+  
+  .message-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .delete-icon,
+  .reply-icon {
+    margin-left: 10px;
+  }
 @media screen and (max-width: 800px) {
     main {
         flex-direction: column;

@@ -1,10 +1,16 @@
 from django.shortcuts import render,redirect
 from .models import Home  
 from .forms import AdvertForm
+from.forms import Message
 import cloudinary.uploader
 from django.contrib.auth.decorators import login_required
-
-
+from django.contrib.auth.models import User
+from .forms import MessageForm
+from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import FormView
+from .models import Message
+from django.http import HttpResponseNotFound, HttpResponseServerError
 #def index(request):
 #    return render(request,'home/index.html')
 def index(request):
@@ -85,3 +91,41 @@ def search_results(request):
     # Apply other filters as needed
     # Render template with filtered results
     return render(request, 'home/search_results.html', {'filtered_homes': filtered_homes})
+
+# ------------------------------------------------Message FUNCTION STILL WORK IN PROGRESS
+from django.shortcuts import render, get_object_or_404
+from .models import Home, Message
+
+def advert_detail(request, advert_id):
+    advert = get_object_or_404(Home, pk=home_id)
+    seller_id = home.user_id  
+    return render(request, 'advert_detail.html', {'advert': advert, 'seller_id': seller_id})
+
+
+
+def advert_detail(request, advert_id):
+    advert = get_object_or_404(Home, pk=advert_id)
+    recipient_id = advert.user_id  # Get the ID of the home author's owner
+    return render(request, 'advert_detail.html', {'advert': advert, 'recipient_id': recipient_id})
+
+@login_required
+def compose_message(request, recipient_id):
+    try:
+        recipient = get_object_or_404(User, pk=recipient_id)
+        if request.method == 'POST':
+            form = MessageForm(request.POST)
+            if form.is_valid():
+                subject = form.cleaned_data['subject']
+                message_content = form.cleaned_data['message']
+                message = Message(sender=request.user, recipient=recipient, subject=subject, message=message_content)
+                message.save()
+                messages.success(request, 'Message sent successfully.')
+                return redirect('/')  # Redirect to home page after sending message
+            else:
+                messages.error(request, 'Failed to send message. Please check the form.')
+        else:
+            form = MessageForm()
+        return render(request, 'compose_message.html', {'form': form, 'recipient_id': recipient_id})
+    except Exception as e:
+        messages.error(request, f"An error occurred: {e}")
+        return redirect('/')  # Redirect to home page in case of error

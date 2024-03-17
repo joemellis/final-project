@@ -111,6 +111,7 @@ input[type="text"] {
     height: auto;
     justify-self: center;
     margin-right: 10px;
+    min-height: fit-content;
     
 }
 .card p{

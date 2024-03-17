@@ -26,14 +26,27 @@
                 <p>Price</p>
                 <p>${{ home.price }}</p>
             </div>
-            <div>
-                <button class="contact-button">Contact</button>
-            </div>
             
+
+            {% if home.user %}
+            <a href="{% url 'compose_message' recipient_id=home.id %}">Compose Message</a>
+            {% endif %}
+
+            <div id="contactFormModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeContactForm()">&times;</span>
+                    <form action="{% url 'compose_message' recipient_id=home.id %}" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="contact-button">contact</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
- {% endfor %}
- <footer class="card">
+    {% endfor %}
+</div>
+<footer class="card">
     <div class="social-links">
         <a href="#"><i class="bx bxl-facebook"></i></a>
         <a href="#"><i class="bx bxl-twitter"></i></a>
@@ -43,4 +56,31 @@
         <p>&copy; 2024 Rustys TradingPost. All rights reserved.</p>
     </div>
 </footer>
+<script>
+    // Get the modal
+    let modal = document.getElementById("contactFormModal");
+
+    // Get the button that opens the modal
+    let btn = document.querySelector(".contact-button");
+
+    // Get the <span> element that closes the modal
+    let span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    function openContactForm() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    function closeContactForm() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 {% endblock %}

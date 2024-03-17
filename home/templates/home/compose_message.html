@@ -1,12 +1,6 @@
-<!-- compose_message.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compose Message</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Compose Message{% endblock %}
+{% block content %}
     <h1>Compose Message</h1>
     <form method="post" action="{% url 'compose_message' recipient_id=recipient_id %}">
         {% csrf_token %}
@@ -18,5 +12,21 @@
         <br>
         <button type="submit">Send</button>
     </form>
-</body>
-</html>
+
+    <!-- Option to reply to the message -->
+    {% if message %}
+    <div class="card">
+    <h2 >Replying to: {{ message.subject }}</h2>
+    <form class="card-info" method="post" action="{% url 'compose_message' recipient_id=message.sender.id %}">
+        {% csrf_token %}
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" value="Re: {{ message.subject }}">
+        <br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" cols="30"></textarea>
+        <br>
+        <button type="submit">Send Reply</button>
+    </form>
+    </div>
+    {% endif %}
+{% endblock %}

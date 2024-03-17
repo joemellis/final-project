@@ -179,9 +179,3 @@ def inbox(request):
     messages = Message.objects.filter(recipient=request.user).order_by('-timestamp')
     return render(request, 'inbox.html', {'messages': messages})
 
-def delete_message(request, message_id):
-    message = get_object_or_404(Message, pk=message_id)
-    if request.method == 'POST':
-        message.delete()
-        return redirect('inbox')
-    return redirect('inbox')  # Redirect to inbox page if request method is not POST

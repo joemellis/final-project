@@ -168,7 +168,9 @@ input[type="text"] {
     color: #fff;
 }
 
-
+.fa fa-envelope{
+    width: 40px;
+}
 
 
 @media screen and (max-width: 800px) {

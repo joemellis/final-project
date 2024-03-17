@@ -11,6 +11,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import FormView
 from .models import Message
 from django.http import HttpResponseNotFound, HttpResponseServerError
+from .models import Message
+
 #def index(request):
 #    return render(request,'home/index.html')
 def index(request):
@@ -129,3 +131,50 @@ def compose_message(request, recipient_id):
     except Exception as e:
         messages.error(request, f"An error occurred: {e}")
         return redirect('/')  # Redirect to home page in case of error
+
+
+@login_required
+def unread_message_count(request):
+    unread_count = Message.objects.filter(recipient=request.user, is_read=False).count()
+    return unread_count
+
+@login_required
+def message_detail(request, message_id):
+    message = get_object_or_404(Message, pk=message_id)
+    return render(request, 'message_detail.html', {'message': message})
+
+@login_required
+def read_message(request, message_id):
+    message = get_object_or_404(Message, id=message_id)
+    if message.recipient == request.user:
+        message.is_read = True
+        message.save()
+        return render(request, 'message_detail.html', {'message': message})
+    else:
+        # Handle unauthorized access to messages
+        return HttpResponseForbidden("You don't have permission to access this message.")
+
+@login_required
+def delete_message(request, message_id):
+    message = get_object_or_404(Message, id=message_id)
+    if request.method == 'POST' and message.recipient == request.user:
+        message.delete()
+        return redirect('inbox')
+    return render(request, 'confirm_delete.html', {'message': message})
+
+@login_required
+def edit_message(request, message_id):
+    message = get_object_or_404(Message, id=message_id)
+    if request.method == 'POST' and message.recipient == request.user:
+        form = MessageForm(request.POST, instance=message)
+        if form.is_valid():
+            form.save()
+            return redirect('inbox')
+    else:
+        form = MessageForm(instance=message)
+    return render(request, 'edit_message.html', {'form': form, 'message': message})
+
+def inbox(request):
+    # Retrieve all messages for the current user
+    messages = Message.objects.filter(recipient=request.user).order_by('-timestamp')
+    return render(request, 'inbox.html', {'messages': messages})

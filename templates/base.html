@@ -23,7 +23,11 @@
             {% if user.is_authenticated %}
                 <!-- Show logout and favorite buttons if user is logged in -->
                 <a href="{% url 'user_posts' %}">Your Posts</a>
-                
+                <a href="{% url 'inbox' %}">
+                    <i class="fa fa-envelope"></i>
+                    {% if unread_count %}
+                        <span class="badge">{{ unread_count }}</span>
+                    {% endif %}
                 <button onclick="location.href='{% url 'create_advert' %}'">Create Advert</button>
                 <button onclick="location.href='{% url 'account_logout' %}'">Logout</button>
                 <a href="{% url 'index' %}">Home</a>

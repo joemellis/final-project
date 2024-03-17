@@ -1,5 +1,4 @@
 <!-- compose_message.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,26 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compose Message</title>
 </head>
-<body >
-    <div class="content">
-    <h1 class="category-heading">Compose Message</h1>
-    <form class="card" method="post" action="{% url 'compose_message' recipient_id=recipient_id %}">
+<body>
+    <h1>Compose Message</h1>
+    <form method="post" action="{% url 'compose_message' recipient_id=recipient_id %}">
         {% csrf_token %}
-        
-        <label for="recipient">Recipient:</label>
-        <input type="text" id="recipient" name="recipient" value="{{ seller.username }}" disabled>
-        <br>
-        
         <label for="subject">Subject:</label>
         <input type="text" id="subject" name="subject">
         <br>
-        
         <label for="message">Message:</label>
         <textarea id="message" name="message" rows="5" cols="30"></textarea>
         <br>
-        
         <button type="submit">Send</button>
     </form>
-</div>
 </body>
 </html>

@@ -1,0 +1,22 @@
+<!-- edit_message.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Message</title>
+</head>
+<body>
+    <h1>Edit Message</h1>
+    <form method="post" action="{% url 'edit_message' message.id %}">
+        {% csrf_token %}
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" value="{{ message.subject }}">
+        <br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" cols="30">{{ message.message }}</textarea>
+        <br>
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>

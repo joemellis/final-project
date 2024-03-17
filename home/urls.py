@@ -13,6 +13,13 @@ urlpatterns =[
     path('user/posts/<int:advert_id>/delete/', views.delete_advert, name='delete_advert'),
     path('compose/<int:recipient_id>/', views.compose_message, name='compose_message'),
     path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
+    path('inbox/', views.inbox, name='inbox'),
+    path('message/<int:message_id>/', views.read_message, name='read_message'),
+    path('message/<int:message_id>/delete/', views.delete_message, name='delete_message'),
+    path('message/<int:message_id>/edit/', views.edit_message, name='edit_message'),
+    path('message/<int:message_id>/', views.message_detail, name='message_detail'),
+
+
 
     
     

@@ -29,12 +29,12 @@
             
 
             {% if home.user %}
-            <a href="{% url 'compose_message' recipient_id=home.id %}">Compose Message</a>
+            
             {% endif %}
 
             <div id="contactFormModal" class="modal">
                 <div class="modal-content">
-                    <span class="close" onclick="closeContactForm()">&times;</span>
+                    
                     <form action="{% url 'compose_message' recipient_id=home.id %}" method="post">
                         {% csrf_token %}
                         {{ form.as_p }}

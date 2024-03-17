@@ -10,6 +10,18 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     home_list = Home.objects.all().order_by('-created_on')
     return render(request, 'home/index.html', {'home_list': home_list})
+    paginator = Paginator(home_list, 12)  # Show 12 adverts per page
+    page_number = request.GET.get('page')
+    try:
+        page_obj = paginator.get_page(page_number)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
+    
+    return render(request, 'home/index.html', {'page_obj': page_obj})
+
+
 # ------------------------------------------------CREATE A POST
 
 @login_required

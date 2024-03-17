@@ -59,9 +59,9 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/'  # the desired URL after login
-
-LOGOUT_REDIRECT_URL = '/'  # the desired URL after logout
+ACCOUNT_SIGNUP_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = '/'  
+LOGOUT_REDIRECT_URL = '/'  
 
 ACCOUNT_EMAIL_REQUIRED = True
 

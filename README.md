@@ -1,4 +1,4 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Local Image](/static/assets/logorusty.png)
 # Project Title: Rustys TradingPost
 ## Description
 "Rustys TradingPost is a web application that allows users to sign up, exchange messages, and possibly create listings or advertisements. It leverages Django's authentication system and integrates with third-party packages like allauth for user management. i took inspiration from dondeal, rustys is set in a future apocalyptic world
@@ -155,6 +155,14 @@ Overall, Rusty's is a fully functional platform with immense potential for expan
 django docs: https://docs.djangoproject.com/en/5.0/
 donedeal Example Websites: https://www.donedeal.ie/
 
-### Shoutouts
-- Staff at Quest for hosting the event and providing refreshments
-- Thanks to Martin too.
+### Screenshots of pages
+![Local Image](/static/assets/start.PNG)
+![Local Image](/static/assets/signup.PNG)
+![Local Image](/static/assets/login.PNG)
+![Local Image](/static/assets/logout.PNG)
+![Local Image](/static/assets/loggedin%20home.PNG)
+![Local Image](/static/assets/create.PNG)
+![Local Image](/static/assets/edit%20post.PNG)
+![Local Image](/static/assets/your%20posts.PNG)
+![Local Image](/static/assets/reply.PNG)
+![Local Image](/static/assets/message%20details.PNG)

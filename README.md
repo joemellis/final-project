@@ -13,12 +13,6 @@
 - Heroku
 - Elephant SQL
 ## Website Structure
-### Pages
-if un auth
-- Index/ Login/Signup
-if auth
-- Index/ Logout/create_advert/contact/my_posts/inbox
-
 ### Models and Relationships
 Home Model: This model  is for creating an advertisement or listing. It contains fields such as title, description, price, location, category, image, and additional_photos.
 

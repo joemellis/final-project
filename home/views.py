@@ -82,18 +82,32 @@ def delete_advert(request, advert_id):
 
 # ------------------------------------------------SEARCH FUNCTION STILL WORK IN PROGRESS
 def search_results(request):
-    # Get form inputs
-    search_query = request.GET.get('search')
-    section = request.GET.get('section')
-    location = request.GET.get('location')
-    # Get filtered homes based on form inputs
-    filtered_homes = Home.objects.all()
-    if search_query:
-        filtered_homes = filtered_homes.filter(title__icontains=search_query)
-    # Apply other filters as needed
-    # Render template with filtered results
-    return render(request, 'home/search_results.html', {'filtered_homes': filtered_homes})
+    if request.method == 'POST':
+        # Extract filter parameters from the request body
+        search_input = request.POST.get('searchInput')
+        section = request.POST.get('section')
+        location = request.POST.get('location')
+        price_from = request.POST.get('priceFrom')
+        price_to = request.POST.get('priceTo')
+        for_sale = request.POST.get('forSale')
 
+        # Perform filtering based on the received parameters
+        # Query your database and return filtered results
+        # Example: filtered_results = YourModel.objects.filter(...)
+
+        # Serialize the filtered results into JSON format
+        # Example: serialized_results = [{'field1': 'value1', 'field2': 'value2'}, ...]
+
+        # Return the filtered results as JSON response
+        return JsonResponse({'results': serialized_results})
+
+    else:
+        # Handle GET requests or other HTTP methods
+        return JsonResponse({'error': 'Method not allowed'}, status=405)
+def your_view(request):
+    categories = Home.objects.values_list('category', flat=True).distinct()
+    locations = Home.objects.values_list('location', flat=True).distinct()
+    return render(request, 'index.html', {'categories': categories, 'locations': locations})
 # ------------------------------------------------Message FUNCTION STILL WORK IN PROGRESS
 from django.shortcuts import render, get_object_or_404
 from .models import Home, Message

@@ -5,10 +5,10 @@ from django.contrib.auth import views as auth_views
 from allauth.account.views import SignupView 
 
 urlpatterns =[
-    path('search/', search_results, name='search_results'),
+    
     path('', views.index,name ='index'),
     path('create-advert/', views.create_advert, name='create_advert'),
-    path('/', views.success_page, name='success_url'),
+    path('', views.success_page, name='success_url'),
     path('user/posts/', views.user_posts, name='user_posts'),
     path('user/posts/<int:advert_id>/edit/', views.edit_advert, name='edit_advert'),
     path('user/posts/<int:advert_id>/delete/', views.delete_advert, name='delete_advert'),
@@ -22,6 +22,7 @@ urlpatterns =[
     path('delete_message/<int:message_id>/', views.delete_message, name='delete_message'),
     
     path('accounts/signup/', SignupView.as_view(), name='account_signup'),
+    path('search/', search_results, name='search'),
     
 
 

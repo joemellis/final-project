@@ -18,41 +18,143 @@ if un auth
 - Index/ Login/Signup
 if auth
 - Index/ Logout/create_advert/contact/my_posts/inbox
-### Architecture
-- Consitent navbar and footer
-- index.html landing page which includes all posts from the database and displays them in chronolgical order newest first, if the user is not logged in they may view the posts on the database, but cannot send messages, they can login or sign up, if logged in the user can view the home page posts, send the seller a private message, they can create a new advert/post, they can access thier inbox, display a list of thier created adverts, created adverts can be edited or deleted, in the in box, a list of messages are displayed, messages may be clicked to be read, can be replied to, and deleted,
-all pages extend ffrom base.html to keep a consistent feel
-## Ideation
 
+### Models and Relationships
+Home Model: This model  is for creating an advertisement or listing. It contains fields such as title, description, price, location, category, image, and additional_photos.
+
+Message Model: This model represents messages exchanged within the application. It includes fields like subject and content.
+
+User Model: Although not explicitly mentioned, this project utilizes Django's built-in User model for user authentication and management.
+
+Views:
+
+Signup View: This view handles the signup process for new users. It uses the SignupView provided by allauth for user registration.
+
+Message List View: This view displays a list of messages in the user's inbox. It iterates over messages and displays them in cards, including options for deleting messages and replying to them.
+
+Templates:
+
+base.html: This template serves as the base layout for rustys, containing common HTML structure and navigation elements.
+
+signup.html: This template is used for the signup page, allowing users to register for an account. It extends the base.html template and includes a form for user registration.
+
+inbox.html: This template displays the user's inbox, showing a list of messages. It extends base.html and iterates over messages to display them.
+
+
+Authentication and Authorization:
+
+i am using allauth for user authentication, which provides features like signup, login, logout, and password management out of the box.
+
+## Screenshot wireframe
+![Local Image](/static/assets/wireframe.jpg)
+
+## Ideation
 as a game developer i try to make things a bit fun, a bit imaginative, i was set on making a marketplace, that didnt need any payment methods, like craigslist,facebook marketplace,donedeal,
 done deal has a starting page with many filtering options, it was a bit much for my needs, but i liked the lay out of the content once filtering had been entered
+
 ## Screenshots of project Board
 ![Local Image](/static/assets/project%20board.PNG)
+
 ### User Stories
 User Stories
-- As a user, I can easily navigate to the login or sign-up page upon entering the site, ensuring a smooth onboarding experience.
-- As a logged-in user, I can access my profile page where I can add a profile picture and update my bio, allowing me to personalize my profile and share information with others.
-- As a user, I can filter the database by selecting one of three buttons: workshops, events, or study groups, enabling me to quickly find the type of content I'm interested in.
-- As a logged-in user, I can create a new workshop, event, or study group, specifying relevant details such as date, time, location, and description, empowering me to organize and promote activities within the community.
-- As a user  I want detailed information about each interdimensional destination, including any potential risks or challenges, to ensure a secure and enjoyable trip.
-- As a user, I can edit and delete my own posts (workshops, events, or study groups) to make necessary updates or remove outdated information.
+    User Registration:
+        As a new user, I want to be able to register for an account on the platform.
+
+    User Authentication:
+        As a registered user, I want to be able to log in to my account securely.
+
+    User Profile:
+        As a user, I want to have a profile where I can view and update my personal information.
+
+    Messaging System:
+        As a user, I want to be able to send messages to other users on the platform.
+        As a user, I want to receive notifications when I receive a new message.
+
+    Advert Posting:
+        As a user, I want to be able to create and post advertisements for items or services I want to sell.
+
+    Advert Management:
+        As a user, I want to be able to edit or delete my own advertisements.
+        As a user, I want to view a list of all my posted advertisements.
+
+    Search and Filter Adverts:
+        As a user, I want to be able to search for specific advertisements based on keywords or categories.
+        As a user, I want to filter advertisements based on various criteria such as price, location, and category.
+
+    Inbox Management:
+        As a user, I want to be able to view my inbox and read messages sent to me by other users.
+        As a user, I want to be able to delete messages from my inbox.
+
+### Features
+User Authentication and Authorization:
+-Users can register for an account and log in securely.
+-Authentication mechanisms ensure that only authorized users can access certain features.
+
+Messaging System:
+-Users can send messages to each other through an internal messaging system.
+-Notifications alert users when they receive new messages.
+
+Advert Posting and Management:
+-Users can create and post advertisements for items or services they want to sell.
+-Advertisements can include details like title, description, price, location, and images.
+-Users have the ability to edit or delete their own advertisements.
+-Advert management features enable users to view a list of all their posted advertisements.
+
+Inbox Management:
+-Users can view their inbox and read messages sent by other users.
+-Inbox management features enable users to delete messages from their inbox.
+-Users can reply to messages sent by other users.
+
+These features collectively provide users with a comprehensive platform for buying, selling, and communicating with each other effectively within the application.
+
+### Issues and Bugs
+TemplateDoesNotExist for signup.html: Initially, i encountered a TemplateDoesNotExist error for signup.html. This was likely due to incorrect template paths or misconfigured template loaders. To overcome this, i double-checked the template paths in my views and ensured that the templates were located in the correct directories.
+
+AttributeError for SignupView: i faced an AttributeError indicating that SignupView was not defined. This issue likely occurred because i attempted to reference SignupView without importing it. To resolve this, i imported SignupView from the appropriate module where it was defined.
+
+Unauthorized error for site.webmanifest: i encountered an unauthorized error when trying to access site.webmanifest. This issue may have been caused by incorrect permissions or misconfiguration in my web server or application settings. To fix it, i ensured that the necessary permissions were set correctly and that the file paths were properly configured.
+
+Syntax error in site.webmanifest: There was a syntax error in site.webmanifest, which prevented it from being parsed correctly. To resolve this, i corrected the syntax error in the manifest file to ensure it complied with the required format.
+
+TemplateSyntaxError for trans tag: i faced a TemplateSyntaxError related to the trans tag in your templates. This error occurred because the trans tag was not recognized or parsed correctly. To overcome this, i double-checked the syntax of the trans tag and ensured that it was used appropriately according to the documentation.
+
+TemplateDoesNotExist for account/base.html: Finally, i encountered a TemplateDoesNotExist error for account/base.html. This issue may have occurred due to incorrect template paths or misconfigured template loaders. To fix it, i verified the template paths and loaders to ensure that account/base.html was accessible and properly loaded.
+
+Throughout these challenges, i demonstrated persistence and problem-solving skills by carefully analyzing error messages, double-checking configurations, and making necessary corrections to my code and settings. This iterative approach helped me overcome each bug and improve the stability and functionality of my application.
+
+best way to eat a hippo is 1 small bite at a time
+
 ### Future Improvements
-- CSS styling would be improved: Responsiveness, Colour Scheming, Layout, Reactive responses
-- Further and more clear call to actions
-- More interaction ability for user, the ability to set user roles
-- More general interactivty could be implemented
-- Agile workflow - Implementation and delegation of tasks better tracked.
-## Screenshots of wireframing and database schema
-![Local Image](/assets/images/20240305_114724.jpg)
-![Local Image](/assets/images/Screenshot%202024-03-05%20at%2013.17.30.png)
-![Local Image](/assets/images/Screenshot%202024-03-05%20at%2013.17.38.png)
-![Local Image](/assets/images/Screenshot%202024-03-05%20at%2016.16.50.png)
-## Acknowledgments
+# Enhanced CSS Styling:
+
+Implement responsive design to ensure optimal viewing experience across various devices.
+Refine color scheme and design elements to create a visually appealing interface.
+Improve layout for better organization and navigation.
+Incorporate reactive responses to enhance user interaction and engagement.
+# Advanced Filtering System:
+
+Develop a comprehensive filtering system to allow users to refine search results based on various criteria such as price range, location, category, and more.
+Provide users with the ability to save and customize their preferred filters for future searches.
+# Inbox Management Enhancement:
+
+Implement a notification system to alert users about new messages.
+Display a badge with the number of unread messages to keep users informed.
+Enhance inbox functionality for better organization and management of messages, including features like message categorization and sorting options.
+# Sponsored Advertisements:
+
+Introduce the ability for users to create sponsored advertisements, which would appear at the top of search results with a distinct border.
+Offer sponsored advert packages with customizable options such as duration and visibility settings.
+# Integration and Expansion:
+
+Rusty's provides a solid foundation for further expansion and integration into other projects.
+Explore opportunities to integrate Rusty's functionality into other platforms or applications seamlessly.
+Continuously evaluate and implement new features or enhancements to meet evolving user needs and preferences.
+Overall, Rusty's is a fully functional platform with immense potential for expansion and customization. With ongoing development and refinement, it can serve as a versatile solution for various online marketplace needs or seamlessly integrate into existing projects.
+
 ### References
 django docs: https://docs.djangoproject.com/en/5.0/
-Mockplus Example Websites: https://www.mockplus.com/blog/post/travel-website-templates
-w3Schools Bootstrap: https://www.w3schools.com/bootstrap/bootstrap_get_started.asp
-Bootstrap Documentation: https://getbootstrap.com/docs/5.3/getting-started/introduction/
+donedeal Example Websites: https://www.donedeal.ie/
+
 ### Shoutouts
 - Staff at Quest for hosting the event and providing refreshments
 - Thanks to Martin too.

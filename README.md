@@ -118,27 +118,27 @@ Throughout these challenges, i demonstrated persistence and problem-solving skil
 
 best way to eat a hippo is 1 small bite at a time
 
-### Future Improvements
-# Enhanced CSS Styling:
+# Future Improvements
+### Enhanced CSS Styling:
 
 Implement responsive design to ensure optimal viewing experience across various devices.
 Refine color scheme and design elements to create a visually appealing interface.
 Improve layout for better organization and navigation.
 Incorporate reactive responses to enhance user interaction and engagement.
-# Advanced Filtering System:
+### Advanced Filtering System:
 
 Develop a comprehensive filtering system to allow users to refine search results based on various criteria such as price range, location, category, and more.
 Provide users with the ability to save and customize their preferred filters for future searches.
-# Inbox Management Enhancement:
+### Inbox Management Enhancement:
 
 Implement a notification system to alert users about new messages.
 Display a badge with the number of unread messages to keep users informed.
 Enhance inbox functionality for better organization and management of messages, including features like message categorization and sorting options.
-# Sponsored Advertisements:
+### Sponsored Advertisements:
 
 Introduce the ability for users to create sponsored advertisements, which would appear at the top of search results with a distinct border.
 Offer sponsored advert packages with customizable options such as duration and visibility settings.
-# Integration and Expansion:
+### Integration and Expansion:
 
 Rusty's provides a solid foundation for further expansion and integration into other projects.
 Explore opportunities to integrate Rusty's functionality into other platforms or applications seamlessly.
@@ -149,7 +149,7 @@ Overall, Rusty's is a fully functional platform with immense potential for expan
 django docs: https://docs.djangoproject.com/en/5.0/
 donedeal Example Websites: https://www.donedeal.ie/
 
-### Screenshots of pages
+# Screenshots of pages
 ![Local Image](/static/assets/start.PNG)
 ![Local Image](/static/assets/signup.PNG)
 ![Local Image](/static/assets/login.PNG)

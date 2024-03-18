@@ -24,11 +24,11 @@
         <div>
             {% if user.is_authenticated %}
                 <!-- Show logout and buttons if user is logged in -->
-                <a class="contact-button" href="{% url 'user_posts' %}">Your Posts</a>  
+                <a class="contact-button" href="{% url 'user_posts' %}">My Ads</a>  
                 <a class="contact-button" href="{% url 'index' %}">Home</a>
-                <a class="contact-button" href="{% url 'inbox' %}">
+                <a  class="contact-button" href="{% url 'inbox' %}">
                     <i class="fa fa-envelope"></i></a>    
-                <button class="contact-button" onclick="location.href='{% url 'create_advert' %}'">Create Advert</button>
+                <button class="contact-button" onclick="location.href='{% url 'create_advert' %}'">Create +</button>
                 <button class="contact-button" onclick="location.href='{% url 'account_logout' %}'">Logout</button>
                 
                 {% else %}
@@ -86,7 +86,7 @@
         </div>
         
     </main>
-    <footer class="card">
+    <footer class="card, footer">
         <div class="social-links">
             <a href="#"><i class="bx bxl-facebook"></i></a>
             <a href="#"><i class="bx bxl-twitter"></i></a>

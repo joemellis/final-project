@@ -8,7 +8,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgb(16, 16, 16);
-    
+    position: relative;
 }
 
 nav {
@@ -216,6 +216,21 @@ input[type="text"] {
   h1{
     color: #fff;
   }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 5px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.799);
+    display: flex;
+    border-radius: 10px;
+    max-height: 150px;
+    max-width: 95%;
+}
 @media screen and (max-width: 800px) {
     main {
         flex-direction: column;
@@ -247,4 +262,25 @@ input[type="text"] {
     }
 
 
+}
+
+@media (max-width: 300px) {
+    nav {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        margin-top: 10px; /* Adjust spacing as needed */
+    }
+
+    nav img {
+        width: 100%;
+        height: 100%; 
+    }
+    .card{
+        margin: 0;
+        width: 100%;
+        padding: 1px;
+        margin-bottom: 10px;
+    }
 }

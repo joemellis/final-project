@@ -21,15 +21,20 @@
         <div>
             <img src="/static/assets/logorusty.png" alt="Logo">
         </div>
+               
         <div>
             {% if user.is_authenticated %}
+            <div class="navbar-item">
+                Welcome, {{ request.user.username }}
+                <button class="contact-button" onclick="location.href='{% url 'account_logout' %}'">Logout</button>
+            </div>
                 <!-- Show logout and buttons if user is logged in -->
                 <a class="contact-button" href="{% url 'user_posts' %}">My Ads</a>  
                 <a class="contact-button" href="{% url 'index' %}">Home</a>
                 <a  class="contact-button" href="{% url 'inbox' %}">
                     <i class="fa fa-envelope"></i></a>    
                 <button class="contact-button" onclick="location.href='{% url 'create_advert' %}'">Create +</button>
-                <button class="contact-button" onclick="location.href='{% url 'account_logout' %}'">Logout</button>
+                
                 
                 {% else %}
                 <!-- Show login and sign up buttons if user is not logged in -->

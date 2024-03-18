@@ -6,9 +6,11 @@
   {% for message in messages %}
   <li class="card">
     <div class="card-info">
-      <a class="card-info"  href="{% url 'message_detail' message.id %}">{{ message.subject }}</a>
+      <a   href="{% url 'message_detail' message.id %}">{{ message.subject }}</a>
+      <!-- Display sender's name -->
+      <p>From: {{ message.sender }}</p>
       <!-- Display start of the message -->
-      <p class="card-info">{{ message.content|truncatechars:50 }}</p> <!-- Adjust the number of characters as needed -->
+      <p>{{ message.message|truncatechars:50 }}</p> <!-- Adjust the number of characters as needed -->
     </div>
     <div class="message-actions">
       <!-- Delete Icon -->

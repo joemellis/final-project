@@ -24,17 +24,17 @@
         <div>
             {% if user.is_authenticated %}
                 <!-- Show logout and favorite buttons if user is logged in -->
-                <a href="{% url 'user_posts' %}">Your Posts</a>
+                <a class="button" href="{% url 'user_posts' %}">Your Posts</a>
                 <a href="{% url 'inbox' %}">
                     <i class="fa fa-envelope"></i></a>
                     
-                <button onclick="location.href='{% url 'create_advert' %}'">Create Advert</button>
-                <button onclick="location.href='{% url 'account_logout' %}'">Logout</button>
+                <button class="contact-button" onclick="location.href='{% url 'create_advert' %}'">Create Advert</button>
+                <button class="contact-button" onclick="location.href='{% url 'account_logout' %}'">Logout</button>
                 <a href="{% url 'index' %}">Home</a>
                 {% else %}
                 <!-- Show login and sign up buttons if user is not logged in -->
-                <button onclick="location.href='{% url 'account_login' %}'">Login</button>
-                <button onclick="location.href='{% url 'account_signup' %}'">SignUp</button>
+                <button class="contact-button" onclick="location.href='{% url 'account_login' %}'">Login</button>
+                <button class="contact-button" onclick="location.href='{% url 'account_signup' %}'">SignUp</button>
                 
             {% endif %}
         </div>

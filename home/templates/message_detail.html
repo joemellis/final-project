@@ -8,14 +8,14 @@
             <p class="card-info">From: {{ message.sender }}</p>
             <p class="card-info">{{ message.message }}</p>
         </div>
-        <div class="card-footer">
+        
             <!-- Reply button -->
-            <a href="{% url 'compose_message' recipient_id=message.sender.id %}" class="btn btn-primary">Reply</a>
+            <a href="{% url 'compose_message' recipient_id=message.sender.id %}" class="btn btn-primary, contact-button">Reply</a>
             <!-- Delete button -->
             <form action="{% url 'delete_message' message.id %}" method="post">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-danger">Delete</button>
+                <button type="submit" class="btn btn-danger, contact-button">Delete</button>
             </form>
-        </div>
+       
     </div>
 {% endblock %}

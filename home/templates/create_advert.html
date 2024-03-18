@@ -7,7 +7,7 @@
     <form class=" card-create" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Create Advert</button>
+        <button class="contact-button" type="submit">Create Advert</button>
     </form>
 </div>
 {% endblock %}

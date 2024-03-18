@@ -16,7 +16,7 @@
       <!-- Delete Icon -->
       <form class="card-info" action="{% url 'delete_message' message.id %}" method="post">
         {% csrf_token %}
-        <button type="submit" class="delete-icon"><i class="fas fa-trash"></i></button>
+        <button type="submit" class="delete-icon, contact-button"><i class="fas fa-trash"></i></button>
       </form>
       <!-- Reply Icon -->
       <a class="reply-icon" href="{% url 'compose_message' recipient_id=message.sender.id %}">

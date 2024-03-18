@@ -1,39 +1,58 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Project Title: Rustys TradingPost
+## Description
+"Rustys TradingPost is a web application that allows users to sign up, exchange messages, and possibly create listings or advertisements. It leverages Django's authentication system and integrates with third-party packages like allauth for user management. i took inspiration from dondeal, rustys is set in a future apocalyptic world
 
-Welcome,
+## Team 
+- [Joe] - Full Stack Developer
+## Technologies Used
+- Github
+- Gitpod
+- Chat GPT: https://chat.openai.com
+- Django
+- Heroku
+- Elephant SQL
+## Website Structure
+### Pages
+if un auth
+- Index/ Login/Signup
+if auth
+- Index/ Logout/create_advert/contact/my_posts/inbox
+### Architecture
+- Consitent navbar and footer
+- index.html landing page which includes all posts from the database and displays them in chronolgical order newest first, if the user is not logged in they may view the posts on the database, but cannot send messages, they can login or sign up, if logged in the user can view the home page posts, send the seller a private message, they can create a new advert/post, they can access thier inbox, display a list of thier created adverts, created adverts can be edited or deleted, in the in box, a list of messages are displayed, messages may be clicked to be read, can be replied to, and deleted,
+all pages extend ffrom base.html to keep a consistent feel
+## Ideation
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
-
-## Codeanywhere Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
-
-`python3 -m http.server`
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
-
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+as a game developer i try to make things a bit fun, a bit imaginative, i was set on making a marketplace, that didnt need any payment methods, like craigslist,facebook marketplace,donedeal,
+done deal has a starting page with many filtering options, it was a bit much for my needs, but i liked the lay out of the content once filtering had been entered
+## Screenshots of project Board
+![Local Image](/static/assets/project%20board.PNG)
+### User Stories
+User Stories
+- As a user, I can easily navigate to the login or sign-up page upon entering the site, ensuring a smooth onboarding experience.
+- As a logged-in user, I can access my profile page where I can add a profile picture and update my bio, allowing me to personalize my profile and share information with others.
+- As a user, I can filter the database by selecting one of three buttons: workshops, events, or study groups, enabling me to quickly find the type of content I'm interested in.
+- As a logged-in user, I can create a new workshop, event, or study group, specifying relevant details such as date, time, location, and description, empowering me to organize and promote activities within the community.
+- As a user  I want detailed information about each interdimensional destination, including any potential risks or challenges, to ensure a secure and enjoyable trip.
+- As a user, I can edit and delete my own posts (workshops, events, or study groups) to make necessary updates or remove outdated information.
+### Future Improvements
+- CSS styling would be improved: Responsiveness, Colour Scheming, Layout, Reactive responses
+- Further and more clear call to actions
+- More interaction ability for user, the ability to set user roles
+- More general interactivty could be implemented
+- Agile workflow - Implementation and delegation of tasks better tracked.
+## Screenshots of wireframing and database schema
+![Local Image](/assets/images/20240305_114724.jpg)
+![Local Image](/assets/images/Screenshot%202024-03-05%20at%2013.17.30.png)
+![Local Image](/assets/images/Screenshot%202024-03-05%20at%2013.17.38.png)
+![Local Image](/assets/images/Screenshot%202024-03-05%20at%2016.16.50.png)
+## Acknowledgments
+### References
+django docs: https://docs.djangoproject.com/en/5.0/
+Mockplus Example Websites: https://www.mockplus.com/blog/post/travel-website-templates
+w3Schools Bootstrap: https://www.w3schools.com/bootstrap/bootstrap_get_started.asp
+Bootstrap Documentation: https://getbootstrap.com/docs/5.3/getting-started/introduction/
+### Shoutouts
+- Staff at Quest for hosting the event and providing refreshments
+- Thanks to Martin too.

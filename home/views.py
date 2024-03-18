@@ -179,6 +179,6 @@ def inbox(request):
     messages = Message.objects.filter(recipient=request.user).order_by('-timestamp')
     return render(request, 'inbox.html', {'messages': messages})
 
-def signup_view(request):
+def SignupView(request):
     # Your signup logic goes here
     return render(request, 'signup.html')

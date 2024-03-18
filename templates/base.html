@@ -23,14 +23,14 @@
         </div>
         <div>
             {% if user.is_authenticated %}
-                <!-- Show logout and favorite buttons if user is logged in -->
-                <a class="button" href="{% url 'user_posts' %}">Your Posts</a>
-                <a href="{% url 'inbox' %}">
-                    <i class="fa fa-envelope"></i></a>
-                    
+                <!-- Show logout and buttons if user is logged in -->
+                <a class="contact-button" href="{% url 'user_posts' %}">Your Posts</a>  
+                <a class="contact-button" href="{% url 'index' %}">Home</a>
+                <a class="contact-button" href="{% url 'inbox' %}">
+                    <i class="fa fa-envelope"></i></a>    
                 <button class="contact-button" onclick="location.href='{% url 'create_advert' %}'">Create Advert</button>
                 <button class="contact-button" onclick="location.href='{% url 'account_logout' %}'">Logout</button>
-                <a href="{% url 'index' %}">Home</a>
+                
                 {% else %}
                 <!-- Show login and sign up buttons if user is not logged in -->
                 <button class="contact-button" onclick="location.href='{% url 'account_login' %}'">Login</button>

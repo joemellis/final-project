@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 from .views import search_results
 from django.contrib.auth import views as auth_views
+from allauth.account.views import SignupView 
 
 urlpatterns =[
     path('search/', search_results, name='search_results'),
@@ -19,7 +20,8 @@ urlpatterns =[
     path('message/<int:message_id>/edit/', views.edit_message, name='edit_message'),
     path('message/<int:message_id>/', views.message_detail, name='message_detail'),
     path('delete_message/<int:message_id>/', views.delete_message, name='delete_message'),
-    path('accounts/signup/', views.signup_view, name='account_signup'),
+    
+    path('accounts/signup/', SignupView.as_view(), name='account_signup'),
     
 
 

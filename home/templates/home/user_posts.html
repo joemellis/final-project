@@ -5,13 +5,14 @@
 {% for advert in user_adverts %}
 <div class="card" >
     <a class="contact-button" href="{% url 'edit_advert' advert.id %}">Edit</a>
-    <a class="contact-button" href="{% url 'delete_advert' advert.id %}">Delete</a>
+    
     <div class="card-image">
+        <h3 class="card-info" >{{ advert.title }}</h3>
         <img  src="{{ advert.image.url }}" alt="Image">
     </div>
-    <h3 class="card-info" >{{ advert.title }}</h3>
-    <h3 class="card-info" >{{ advert.c }}</h3>
+    
     <p class="card-info">{{ advert.description }}</p>
+    <a class="contact-button" href="{% url 'delete_advert' advert.id %}">Delete</a>
 </div>
 {% endfor %}
 {% endblock %}

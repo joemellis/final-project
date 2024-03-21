@@ -124,19 +124,25 @@ input[type="text"] {
     flex: 1;
     overflow: hidden;
     border-radius: 10px;
+    min-height: 200px;
+    min-width: 300px;
 }
 
 .card-image img {
-    width: 100%;
-    height: auto;
+    width:  100%;
+    
     justify-self: center;
     margin-right: 10px;
-    min-height: fit-content;
+    min-height: 200px;
+    min-width: 300px;
     max-width: 400px;
     
 }
-.card p{
+.card-create p{
     max-width: 500px;
+    
+    white-space: wrap;
+    text-overflow: ellipsis;
 }
 .image-overlay {
     position: absolute;
@@ -150,7 +156,9 @@ input[type="text"] {
 }
 
 .image-overlay img {
-    width: 40px; 
+    max-width: 40px;
+    min-height: 40px;
+    min-width: 40px;
     margin-right: -5px;
 }
 
@@ -163,8 +171,10 @@ input[type="text"] {
     flex: 2;
     padding: 2px;
     margin-left: 10px;
+    max-height: 160px;
     max-width: 500px;
-   
+    white-space: wrap;
+    text-overflow: ellipsis;
 }
 
 .card-info h3 {
@@ -274,6 +284,12 @@ input[type="text"] {
        
         max-width: 100%;
         
+    }
+    .image-overlay img {
+        max-width: 40px;
+        min-height: 40px;
+        min-width: 40px;
+        margin-right: -5px;
     }
 }
 

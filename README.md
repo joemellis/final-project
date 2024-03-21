@@ -1,10 +1,28 @@
 ![Local Image](/static/assets/logorusty.png)
 # Project Title: Rustys TradingPost
 ## Description
-"Rustys TradingPost is a web application that allows users to sign up, exchange messages, and possibly create listings or advertisements. It leverages Django's authentication system and integrates with third-party packages like allauth for user management. i took inspiration from dondeal, rustys is set in a future apocalyptic world
+"Rustys TradingPost is a web application that allows users to sign up, exchange messages, and possibly create listings or advertisements.currently themed to be an apocalyptic marketplace, this could easily and quicky be reskinned to provide a marketplace for any niche, videogame, hunting,sports,cars, etc. It leverages Django's authentication system and integrates with third-party packages like allauth for user management. i took inspiration from dondeal, 
 
-## Team 
-- [Joe] - Full Stack Developer
+
+### [Link to the live site](https://cat-beans-cafe-08a84ae29847.herokuapp.com/)
+
+#### - By Joe Mellis
+
+---
+
+## Table of contents 
+
+ 1. [ UX ](#ux)
+ 2. [ Agile Development ](#agile-development)
+ 3. [ Features implemented ](#features-implemented)  
+ 4. [ Features Left to Implement ](#features-left-to-implement)  
+ 5. [ Technology used ](#technology-used) 
+ 6. [ Testing ](#testing)  
+ 7. [ Bugs ](#known-bugs)  
+ 8. [ Deployment](#deployment)
+ 9. [ Resources ](#resources)  
+ 10. [ Credits and acknowledgements ](#credits-and-acknowledgements)
+
 ## Technologies Used
 - Html - for page structure
 - CSS - for custom styling
@@ -131,7 +149,7 @@ Inbox Management:
 
 These features collectively provide users with a comprehensive platform for buying, selling, and communicating with each other effectively within the application.
 
-### Manual testing
+# Manual testing
 
 #### Account Registration Tests
 | Test |Result  |

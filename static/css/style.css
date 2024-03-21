@@ -132,6 +132,7 @@ input[type="text"] {
     justify-self: center;
     margin-right: 10px;
     min-height: fit-content;
+    max-width: 400px;
     
 }
 .card p{
@@ -162,6 +163,7 @@ input[type="text"] {
     flex: 2;
     padding: 2px;
     margin-left: 10px;
+    max-width: 500px;
    
 }
 
@@ -268,7 +270,11 @@ input[type="text"] {
         margin-right: 20px;
     }
 
-
+    .card-image img {
+       
+        max-width: 100%;
+        
+    }
 }
 
 @media (max-width: 300px) {

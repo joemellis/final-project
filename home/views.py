@@ -92,8 +92,8 @@ def search_results(request):
         for_sale = request.POST.get('forSale')
 
         # Perform filtering based on the received parameters
-        # Query your database and return filtered results
-        # Example: filtered_results = YourModel.objects.filter(...)
+        # Query  database and return filtered results
+        # Example: filtered_results = Model.objects.filter(...)
 
         # Serialize the filtered results into JSON format
         # Example: serialized_results = [{'field1': 'value1', 'field2': 'value2'}, ...]
@@ -104,19 +104,13 @@ def search_results(request):
     else:
         # Handle GET requests or other HTTP methods
         return JsonResponse({'error': 'Method not allowed'}, status=405)
-def your_view(request):
+def search_view(request):
     categories = Home.objects.values_list('category', flat=True).distinct()
     locations = Home.objects.values_list('location', flat=True).distinct()
     return render(request, 'index.html', {'categories': categories, 'locations': locations})
 # ------------------------------------------------Message FUNCTION STILL WORK IN PROGRESS
 from django.shortcuts import render, get_object_or_404
 from .models import Home, Message
-
-def advert_detail(request, advert_id):
-    advert = get_object_or_404(Home, pk=home_id)
-    seller_id = home.user_id  
-    return render(request, 'advert_detail.html', {'advert': advert, 'seller_id': seller_id})
-
 
 
 def advert_detail(request, advert_id):
@@ -194,5 +188,5 @@ def inbox(request):
     return render(request, 'inbox.html', {'messages': messages})
 
 def SignupView(request):
-    # Your signup logic goes here
+    #  signup logic goes here
     return render(request, 'signup.html')

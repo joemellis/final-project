@@ -59,11 +59,11 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-ACCOUNT_SIGNUP_REDIRECT_URL = ""
-LOGIN_REDIRECT_URL = ''  
-LOGOUT_REDIRECT_URL = ''  
+ACCOUNT_SIGNUP_REDIRECT_URL = "/"
+#LOGIN_REDIRECT_URL = '/'  
+#LOGIN_URL = '/login/' 
+#ACCOUNT_LOGIN_TEMPLATE = '/workspace/final-project/home/templates/registration_login.html'
 
-ACCOUNT_EMAIL_REQUIRED = True
 
 
 MIDDLEWARE = [
@@ -81,11 +81,15 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'rustys_trading_post.urls'
 
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')], 
         'DIRS': [TEMPLATES_DIR],
+        'DIRS': ['/workspace/final-project/templates/account','/workspace/final-project/templates/','/workspace/final-project/home/templates/home',],
+        
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

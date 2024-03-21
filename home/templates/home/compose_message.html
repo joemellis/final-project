@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% block title %}Compose Message{% endblock %}
 {% block content %}
-    <h1>Compose Message</h1>
-    <form method="post" action="{% url 'compose_message' recipient_id=recipient_id %}">
+    <h1 class="category-heading" >Compose Message</h1>
+    <div class="card">
+    
+    <form  method="post" action="{% url 'compose_message' recipient_id=recipient_id %}">
         {% csrf_token %}
         <label for="subject">Subject:</label>
         <input type="text" id="subject" name="subject">
@@ -10,9 +12,9 @@
         <label for="message">Message:</label>
         <textarea id="message" name="message" rows="5" cols="30"></textarea>
         <br>
-        <button type="submit">Send</button>
+        <button class="contact-button" type="submit">Send</button>
     </form>
-
+</div>
     <!-- Option to reply to the message -->
     {% if message %}
     <div class="card">
@@ -25,7 +27,7 @@
         <label for="message">Message:</label>
         <textarea id="message" name="message" rows="5" cols="30"></textarea>
         <br>
-        <button type="submit">Send Reply</button>
+        <button class="contact-button" type="submit">Send Reply</button>
     </form>
     </div>
     {% endif %}

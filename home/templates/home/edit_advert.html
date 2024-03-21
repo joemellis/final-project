@@ -3,9 +3,9 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2 class="category-heading">Edit Advert</h2>
-<form class="card" method="post" enctype="multipart/form-data">
+<form class="card-create" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Save Changes</button>
+    <button class="contact-button" type="submit">Save Changes</button>
 </form>
 {% endblock %}

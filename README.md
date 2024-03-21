@@ -6,14 +6,44 @@
 ## Team 
 - [Joe] - Full Stack Developer
 ## Technologies Used
-- Github
-- Gitpod
-- Chat GPT: https://chat.openai.com
-- Django
-- Heroku
-- Elephant SQL
+- Html - for page structure
+- CSS - for custom styling
+- Python - for the backend
+- Django - framework used to build this project
+- Heroku PostgreSQL - used as the database
+- Font Awesome - for social media icons
+- GitHub - for storing the code and for the projects Kanban
+- Heroku - for hosting and deployement of this project
+- Cloudinary - hosting the static files 
+- Git - version control tool
 ## Website Structure
 ### Models and Relationships
+
+#### Home Model
+
+| Key | Name            | Field             |
+|-----|-----------------|-------------------|
+| PK  | id              | AutoField         |
+| FK  | user            | ForeignKey(User)  |
+| x   | title           | CharField         |
+| x   | description     | TextField         |
+| x   | image           | CloudinaryField   |
+| x   | additional_photos | IntegerField    |
+| x   | created_on      | DateTimeField     |
+| x   | location        | CharField         |
+| x   | category        | CharField         |
+| x   | price           | DecimalField      |
+
+#### Message Model
+
+| Key | Name       | Field               |
+|-----|------------|---------------------|
+| FK  | sender     | ForeignKey(User)    |
+| FK  | recipient  | ForeignKey(User)    |
+| x   | subject    | CharField           |
+| x   | message    | TextField           |
+| x   | timestamp  | DateTimeField       |
+
 Home Model: This model  is for creating an advertisement or listing. It contains fields such as title, description, price, location, category, image, and additional_photos.
 
 Message Model: This model represents messages exchanged within the application. It includes fields like subject and content.
@@ -100,6 +130,69 @@ Inbox Management:
 -Users can reply to messages sent by other users.
 
 These features collectively provide users with a comprehensive platform for buying, selling, and communicating with each other effectively within the application.
+
+### Manual testing
+
+#### Account Registration Tests
+| Test |Result  |
+|--|--|
+| User can create account | pass |
+| User can log into account | Pass |
+| User can log out of account | Pass |
+
+
+---
+
+#### User Navigation Tests
+
+| Test | Result  |
+|--|--|
+| Authorised User can easily navigate to post | Pass |
+| Authorised User can access inbox| Pass|
+| Authorised User access their create post|Pass|
+| Authorised User can access the home page|Pass|
+
+
+
+---
+
+#### Account Authorisation Tests
+
+| Test | Result  |
+|--|--|
+| Only Superuser can access admin page |Pass|
+| Non authorised user cant contact user | Pass |
+| Non authorised user won't access inbox| Pass|
+| Non authorised user won't access create ad| Pass|
+| Authorised user can access inbox| Pass|
+| Authorised user can access create ad| Pass|
+
+---
+
+#### posting and Messaging Tests
+
+| Test |Result  |
+|--|--|
+|User can create a post | Pass |
+|User can edit a post | Pass |
+|User can delete a post | Pass |
+|User can see a list of thier posts | Pass |
+|User can create a contact a seller | Pass |
+|User can get a reply from seller | Pass |
+|User can see a list of recieved mail | Pass |
+|User can get a delete a message from recieved mail | Pass |
+
+
+
+---
+
+#### Admin Tests
+
+| Test |Result  |
+|--|--|
+|Items display correctly on front-end when updated / added |Pass|
+|Admin can remove created listings and messages |Pass|
+
 
 ### Issues and Bugs
 TemplateDoesNotExist for signup.html: Initially, i encountered a TemplateDoesNotExist error for signup.html. This was likely due to incorrect template paths or misconfigured template loaders. To overcome this, i double-checked the template paths in my views and ensured that the templates were located in the correct directories.

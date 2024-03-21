@@ -60,7 +60,7 @@ AUTHENTICATION_BACKENDS = [
 SITE_ID = 1
 
 ACCOUNT_SIGNUP_REDIRECT_URL = "/"
-#LOGIN_REDIRECT_URL = '/'  
+LOGIN_REDIRECT_URL = '/'  
 #LOGIN_URL = '/login/' 
 #ACCOUNT_LOGIN_TEMPLATE = '/workspace/final-project/home/templates/registration_login.html'
 

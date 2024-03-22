@@ -312,4 +312,10 @@ input[type="text"] {
         padding: 1px;
         margin-bottom: 10px;
     }
+    .card-image img {
+        width:  100%;
+        min-width: 100%px;
+        max-width: 250px;
+        
+    }
 }

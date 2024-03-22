@@ -4,7 +4,9 @@
 "Rustys TradingPost is a web application that allows users to sign up, exchange messages, and possibly create listings or advertisements.currently themed to be an apocalyptic marketplace, this could easily and quicky be reskinned to provide a marketplace for any niche, videogame, hunting,sports,cars, etc. It leverages Django's authentication system and integrates with third-party packages like allauth for user management. i took inspiration from dondeal, 
 
 
-### [Link to the live site](https://cat-beans-cafe-08a84ae29847.herokuapp.com/)
+### [Link to the live site](https://rustystradingpost-74a78971ffe2.herokuapp.com/)
+### [Link to amiresponsive](https://ui.dev/amiresponsive?url=https://8000-joemellis-finalproject-8czvhuwqcmy.ws-eu110.gitpod.io/)
+![Local Image](/static/assets/resposive.PNG)
 
 #### - By Joe Mellis
 
@@ -98,7 +100,7 @@ done deal has a starting page with many filtering options, it was a bit much for
 ![Local Image](/static/assets/project%20board.PNG)
 
 ### User Stories
-User Stories
+   
     User Registration:
         As a new user, I want to be able to register for an account on the platform.
 
@@ -158,7 +160,6 @@ These features collectively provide users with a comprehensive platform for buyi
 | User can log into account | Pass |
 | User can log out of account | Pass |
 
-
 ---
 
 #### User Navigation Tests
@@ -169,8 +170,6 @@ These features collectively provide users with a comprehensive platform for buyi
 | Authorised User can access inbox| Pass|
 | Authorised User access their create post|Pass|
 | Authorised User can access the home page|Pass|
-
-
 
 ---
 
@@ -199,8 +198,6 @@ These features collectively provide users with a comprehensive platform for buyi
 |User can get a reply from seller | Pass |
 |User can see a list of recieved mail | Pass |
 |User can get a delete a message from recieved mail | Pass |
-
-
 
 ---
 

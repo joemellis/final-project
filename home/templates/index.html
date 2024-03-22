@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="content">
+    <div class="category-heading">{{ category_name }} - Found Items: {{ home_list|length }}</div>
+
+    {% for home in home_list %}
+    <div class="card">
+        <div class="card-image">
+            <img src="{{ home.image.url }}" alt="Item Image">
+            <div class="image-overlay">
+                <img src="/static/assets/camera.png" alt="Camera Icon">
+                <span>{{ home.additional_photos }}</span>
+            </div>
+        </div>
+        <div class="card-info">
+            <h3>{{ home.title }}</h3>
+            <p>Seller: {{ home.user.username }}</p>
+            <p>Created on: {{ home.created_on|date:"F j, Y" }} Location: {{ home.location }} Category: {{ home.category }}</p>
+       
+            <p>{{ home.description }}</p>
+        </div>
+        <div class="details">
+            <div class="card-price">
+                <p>Price</p>
+                <p>${{ home.price }}</p>
+            </div>
+            
+
+            {% if home.user %}
+            
+            {% endif %}
+
+            <div id="contactFormModal" class="modal">
+                <div class="modal-content">
+                    
+                    <form action="{% url 'compose_message' recipient_id=home.id %}" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="contact-button">contact</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

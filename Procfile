@@ -1,1 +1,1 @@
-web : gunicorn rustys_trading_post.wsgi:application --log-file-
+web : gunicorn rustys_trading_post.wsgi

@@ -42,12 +42,6 @@ def create_advert(request):
         form = AdvertForm()
     return render(request, 'create_advert.html', {'form': form})
 
-def success_page(request):
-    return render(request, '/')
-
-
-
-
     #------------------------------------------EDIT DELET
 
 
@@ -183,6 +177,3 @@ def inbox(request):
     messages = Message.objects.filter(recipient=request.user).order_by('-timestamp')
     return render(request, 'inbox.html', {'messages': messages})
 
-def SignupView(request):
-    #  signup logic goes here
-    return render(request, 'signup.html')

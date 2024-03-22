@@ -15,7 +15,7 @@ from .models import Message
 
 def index(request):
     home_list = Home.objects.all().order_by('-created_on')
-    return render(request, 'home/templates/home/index.html', {'home_list': home_list})
+    return render(request, 'home/index.html', {'home_list': home_list})
 
 
 # ------------------------------------------------CREATE A POST

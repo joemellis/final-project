@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True if "DEBUG" in os.environ else False
 
 ALLOWED_HOSTS = ['.gitpod.io','.herokuapp.com']
-CSRF_TRUSTED_ORIGINS =['https://*.gitpod.io','https://*.herokuapp.com']
+CSRF_TRUSTED_ORIGINS =['https://*.gitpod.io','https://*.herokuapp.com',]
 
 # Application definition
 

@@ -13,11 +13,8 @@ from .models import Message
 from django.http import HttpResponseNotFound, HttpResponseServerError
 from .models import Message
 
-#def index(request):
-#    return render(request,'home/index.html')
 def index(request):
     home_list = Home.objects.all().order_by('-created_on')
-    return render(request, 'home/index.html', {'home_list': home_list})
     paginator = Paginator(home_list, 12)  # Show 12 adverts per page
     page_number = request.GET.get('page')
     try:
@@ -26,7 +23,6 @@ def index(request):
         page_obj = paginator.page(1)
     except EmptyPage:
         page_obj = paginator.page(paginator.num_pages)
-    
     return render(request, 'home/index.html', {'page_obj': page_obj})
 
 

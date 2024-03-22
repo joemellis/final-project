@@ -23,7 +23,7 @@ def index(request):
         page_obj = paginator.page(1)
     except EmptyPage:
         page_obj = paginator.page(paginator.num_pages)
-    return render(request, 'home/index.html', {'page_obj': page_obj})
+    return render(request, 'home/templates/home/index.html', {'page_obj': page_obj})
 
 
 # ------------------------------------------------CREATE A POST

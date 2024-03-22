@@ -89,7 +89,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')], 
         'DIRS': [TEMPLATES_DIR],
-        'DIRS': ['/workspace/final-project/templates/account','/workspace/final-project/templates/','/workspace/final-project/home/templates/home','home/templates/home',],
+        #'DIRS': ['/workspace/final-project/templates/account','/workspace/final-project/templates/','/workspace/final-project/home/templates/home','home/templates/home',],
         
         'APP_DIRS': True,
         'OPTIONS': {

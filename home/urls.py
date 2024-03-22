@@ -7,7 +7,7 @@ from allauth.account.views import LoginView
 
 urlpatterns =[
     
-    path('', views.index,name ='index'),
+    path('home/templates/home/index.html', views.index,name ='index'),
     path('create-advert/', views.create_advert, name='create_advert'),
    # path('/', views.success_page, name='success_url'),
     path('user/posts/', views.user_posts, name='user_posts'),
